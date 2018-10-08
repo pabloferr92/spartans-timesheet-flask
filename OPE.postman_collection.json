@@ -1,0 +1,693 @@
+{
+	"variables": [],
+	"info": {
+		"name": "OPE",
+		"_postman_id": "cd2de88a-e761-d6a8-6720-72566a01141f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"luiz.h.lindner@gmail.com\",\n\t\"password\": \"1234\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/perfil/1",
+			"request": {
+				"url": "{{url}}/perfil/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"perfil_id\": 1,\n    \"data_ultima_atualizacao\": \"2018-09-30 20:17:00\",\n    \"nome\": \"administradorx\",\n    \"atualizado_por\": \"luiz.h.lindner@gmail.com\",\n    \"data_criacao\": \"2018-09-30 20:17:00\",\n    \"criado_por\": \"luiz.h.lindner@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/perfil",
+			"request": {
+				"url": "{{url}}/perfil",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"nome\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/perfil/1",
+			"request": {
+				"url": "{{url}}/perfil/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"administrador\",\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/perfil/1",
+			"request": {
+				"url": "{{url}}/perfil/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/categoria/1",
+			"request": {
+				"url": "{{url}}/categoria/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"perfil_id\": 1,\n    \"data_ultima_atualizacao\": \"2018-09-30 20:17:00\",\n    \"nome\": \"administradorx\",\n    \"atualizado_por\": \"luiz.h.lindner@gmail.com\",\n    \"data_criacao\": \"2018-09-30 20:17:00\",\n    \"criado_por\": \"luiz.h.lindner@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/categoria",
+			"request": {
+				"url": "{{url}}/categoria",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"categoria\",\n    \"descricao\": \"descricao\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/categoria/1",
+			"request": {
+				"url": "{{url}}/categoria/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"categoria\",\n    \"descricao\": \"descricao_nova\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/categoria/1",
+			"request": {
+				"url": "{{url}}/categoria/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/cliente/1",
+			"request": {
+				"url": "{{url}}/cliente/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"perfil_id\": 1,\n    \"data_ultima_atualizacao\": \"2018-09-30 20:17:00\",\n    \"nome\": \"administradorx\",\n    \"atualizado_por\": \"luiz.h.lindner@gmail.com\",\n    \"data_criacao\": \"2018-09-30 20:17:00\",\n    \"criado_por\": \"luiz.h.lindner@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/cliente",
+			"request": {
+				"url": "{{url}}/cliente",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"cliente novo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/cliente/1",
+			"request": {
+				"url": "{{url}}/cliente/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"novo nome cliente\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/cliente/1",
+			"request": {
+				"url": "{{url}}/cliente/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/usuario/1",
+			"request": {
+				"url": "{{url}}/usuario/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"perfil_id\": 1,\n    \"data_ultima_atualizacao\": \"2018-09-30 20:17:00\",\n    \"nome\": \"administradorx\",\n    \"atualizado_por\": \"luiz.h.lindner@gmail.com\",\n    \"data_criacao\": \"2018-09-30 20:17:00\",\n    \"criado_por\": \"luiz.h.lindner@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/usuario/1",
+			"request": {
+				"url": "{{url}}/usuario",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Luiz Henrique Lindner\",\n    \"email\": \"luiz.lindxne1r2@aoop.com.br\",\n    \"password\": \"123456\",\n    \"perfil_id\": \"1\",\n    \"timezone\": \"-3\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/usuario/1",
+			"request": {
+				"url": "{{url}}/usuario/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Novo Nome\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/squad/1",
+			"request": {
+				"url": "{{url}}/squad/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"perfil_id\": 1,\n    \"data_ultima_atualizacao\": \"2018-09-30 20:17:00\",\n    \"nome\": \"administradorx\",\n    \"atualizado_por\": \"luiz.h.lindner@gmail.com\",\n    \"data_criacao\": \"2018-09-30 20:17:00\",\n    \"criado_por\": \"luiz.h.lindner@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/squad",
+			"request": {
+				"url": "{{url}}/squad",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Squad 2\",\n    \"administrador_id\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/squad/1",
+			"request": {
+				"url": "{{url}}/lancamentohoras/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data_inicio\": \"2018-10-07 18:47:00\",\n    \"usuario_id\": 1,\n    \"descricao\": \"adddssss\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/squad/1",
+			"request": {
+				"url": "{{url}}/squad/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/membrossquad/1",
+			"request": {
+				"url": "{{url}}/membrossquad/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"perfil_id\": 1,\n    \"data_ultima_atualizacao\": \"2018-09-30 20:17:00\",\n    \"nome\": \"administradorx\",\n    \"atualizado_por\": \"luiz.h.lindner@gmail.com\",\n    \"data_criacao\": \"2018-09-30 20:17:00\",\n    \"criado_por\": \"luiz.h.lindner@gmail.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/membrossquad",
+			"request": {
+				"url": "{{url}}/membrossquad",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"squad_id\": \"2\",\n    \"usuario_id\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/membrossquad/1",
+			"request": {
+				"url": "{{url}}/membrossquad/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/lancamentohoras/1",
+			"request": {
+				"url": "{{url}}/lancamentohoras/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data_inicio\": \"2018-10-07 18:47:40\",\n    \"usuario_id\": 1,\n    \"descricao\": \"adddsssxxxxs\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/lancamentohoras",
+			"request": {
+				"url": "{{url}}/lancamentohoras",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data_inicio\": \"2018-10-07 18:47:00\",\n    \"usuario_id\": 1,\n    \"descricao\": \"aeae\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/lancamentohoras/1",
+			"request": {
+				"url": "{{url}}/lancamentohoras/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data_inicio\": \"2018-10-07 18:47:40\",\n    \"usuario_id\": 1,\n    \"descricao\": \"adddsssxxxxs\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/lancamentohoras/1",
+			"request": {
+				"url": "{{url}}/lancamentohoras/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data_inicio\": \"2018-10-07 18:47:40\",\n    \"usuario_id\": 1,\n    \"descricao\": \"adddsssxxxxs\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
