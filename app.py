@@ -17,7 +17,7 @@ from resources.lancamentoHoras import LancamentoHoras
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "s3cr3tp@ssw0rd"
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:P@ssword1@localhost/flasktest'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:P@ssword1@localhost/timesheet'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 #app.config["JWT_DEFAULT_REALM"] = "Login Required"
 jwt = JWTManager(app)
